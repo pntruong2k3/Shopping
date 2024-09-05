@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/head :: head">
+
+<body >
+	
+	<div class="page-wrapper">
+	<header th:replace="layout/header :: header"></header>
+		<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"><i class="icon-close"></i></span>
+					</button>
+
+					<div class="form-box">
+						<div class="form-tab">
+							<ul class="nav nav-pills nav-fill nav-border-anim" role="tablist">
+								<li class="nav-item"><a class="nav-link active"
+									id="signin-tab" data-toggle="tab" href="#signin" role="tab"
+									aria-controls="signin" aria-selected="true">Sign In</a></li>
+									
+							</ul>
+							<div class="tab-content" id="tab-content-5">
+								<div class="tab-pane fade show active" id="signin"
+									role="tabpanel" aria-labelledby="signin-tab">
+									<form th:action="@{/login}" method="post">
+										<p th:if="${loginError}" th:text="${loginError}" style="color: red;"></p>
+										<div class="form-group">
+											
+											<label for="singin-email">Username * </label>
+											
+											<input type="text" class="form-control" id="singin-email"
+												placeholder="Username" name="username" required>
+										</div>
+										<!-- End .form-group -->
+
+										<div class="form-group">
+											<label for="singin-password">Password *</label> <input
+												type="password" class="form-control" id="singin-password"
+												placeholder="Password" name="password" required>
+										</div>
+										
+										<a  href="/register" class=" mx-auto">Register</a>
+										<p th:if="${success}" th:text="${success}" style="color: red;"></p>
+										<!-- End .form-group -->
+
+										<div class="form-footer">
+											<button type="submit" class="btn btn-outline-primary-2">
+												<span>LOG IN</span> <i class="icon-long-arrow-right"></i>
+											</button>
+											
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input"
+													id="signin-remember"> <label
+													class="custom-control-label" for="signin-remember">Remember
+													Me</label>
+												
+											</div>
+											<!-- End .custom-checkbox -->
+										
+											<a href="#" class="forgot-link">Forgot Your Password?</a>
+										</div>
+									
+										
+										<!-- End .form-footer -->
+									</form>
+									<div class="form-choice">
+										<p class="text-center">or sign in with</p>
+										<div class="row">
+											<div class="col-sm-6">
+												<a href="#" class="btn btn-login btn-g"> <i
+													class="icon-google"></i> Login With Google
+												</a>
+											</div>
+											<!-- End .col-6 -->
+											<div class="col-sm-6">
+												<a href="#" class="btn btn-login btn-f"> <i
+													class="icon-facebook-f"></i> Login With Facebook
+												</a>
+											</div>
+											<!-- End .col-6 -->
+										</div>
+										<!-- End .row -->
+									</div>
+									<!-- End .form-choice -->
+								</div>
+								<!-- .End .tab-pane -->
+								
+								<!-- .End .tab-pane -->
+							</div>
+							<!-- End .tab-content -->
+						</div>
+						<!-- End .form-tab -->
+					</div>
+					<!-- End .form-box -->
+				</div>
+	</div>
+			<footer th:replace="layout/footer :: footer"></footer>
+	
+
+	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+
+	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="../../plugins/iCheck/icheck.min.js"></script>
+	<script>
+		$(function() {
+			$('input').iCheck({
+				checkboxClass : 'icheckbox_square-blue',
+				radioClass : 'iradio_square-blue',
+				increaseArea : '20%' /* optional */
+			});
+		});
+	</script>
+	<script th:src="@{fe/js/jquery.min.js}"></script>
+	<script th:src="@{fe/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{fe/js/jquery.hoverIntent.min.js}"></script>
+	<script th:src="@{fe/js/jquery.waypoints.min.js}"></script>
+	<script th:src="@{fe/js/superfish.min.js}"></script>
+	<script th:src="@{fe/js/owl.carousel.min.js}"></script>
+	<script th:src="@{fe/js/bootstrap-input-spinner.js}"></script>
+	<script th:src="@{fe/js/jquery.plugin.min.js}"></script>
+	<script th:src="@{fe/js/jquery.magnific-popup.min.js}"></script>
+	<script th:src="@{fe/js/jquery.countdown.min.js}"></script>
+	<!-- Main JS File -->
+	<script th:src="@{fe/js/main.js}"></script>
+	<script th:src="@{fe/js/demos/demo-4.js}"></script>
+</body>
+</html>

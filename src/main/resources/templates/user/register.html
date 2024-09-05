@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/head :: head">
+<title>Register</title></head>
+
+<body>
+
+	    <div class="page-wrapper">
+	    	<header th:replace="layout/header :: header"></header>
+	    
+		<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"><i class="icon-close"></i></span>
+					</button>
+
+					<div class="form-box">
+						<div class="form-tab">
+							<ul class="nav nav-pills nav-fill nav-border-anim" role="tablist">
+								<li class="nav-item"><a class="nav-link active"
+									id="signin-tab" data-toggle="tab" href="#signin" role="tab"
+									aria-controls="signin" aria-selected="true">Register</a></li>
+							</ul>
+							<div class="tab-content" id="tab-content-5">
+								<div class="tab-pane fade show active" id="signin"
+									role="tabpanel" aria-labelledby="signin-tab">
+									<form th:action="@{/register}" th:object="${user}" method="post">
+										<div class="form-group">
+										
+											<label for="userName">UserName *</label>
+											<p th:if="${errorusername}" th:text="${errorusername}" style="color: red;"></p> <input type="text"
+												name="username" class="form-control" id="register-email"
+												required>
+										</div>
+										<!-- End .form-group -->
+
+										<div class="form-group">
+											<label for="password">Password *</label> <input
+												type="password" name="password" class="form-control"
+												id="register-password" required>
+										</div>
+											<div class="form-group">
+											<label for="confirmPassword">ConfirmPassword *</label> 
+											<p th:if="${error}" th:text="${error}" style="color: red;"></p><input
+												type="password"  id="confirmPassword" class="form-control"
+												name="confirmPassword" required>
+										</div>
+										<div class="form-group">
+											<label for="fullname">FullName *</label> <input type="text"
+												name="fullName" class="form-control" id="register-email"
+												required>
+										</div>
+										<div class="form-group">
+											<label  for="email">Email *</label> 
+											<input type="email" name="email" class="form-control" id="register-email"
+												required>
+										</div>
+											<div class="form-group">
+											<label  for="phone">NumberPhone *</label> 
+											<input type="text" name="telephone" class="form-control" id="register-email"
+												required>
+										</div>
+											<div class="form-group">
+											<label  for="address">Adress *</label> 
+											<input type="text" name="address" class="form-control" id="register-email"
+												required>
+										</div>
+										<p th:if="${success}" th:text="${success}" style="color: red;"></p>
+										<div class="form-footer">
+											<button type="submit" class="btn btn-outline-primary-2">
+												<span>SIGN UP</span> <i class="icon-long-arrow-right"></i>
+											</button>
+											
+											
+										</div>
+									
+										<!-- End .form-footer -->
+									</form>
+									<div class="form-choice">
+										<p class="text-center">or sign in with</p>
+										<div class="row">
+											<div class="col-sm-6">
+												<a href="#" class="btn btn-login btn-g"> <i
+													class="icon-google"></i> Login With Google
+												</a>
+											</div>
+											<!-- End .col-6 -->
+											<div class="col-sm-6">
+												<a href="#" class="btn btn-login btn-f"> <i
+													class="icon-facebook-f"></i> Login With Facebook
+												</a>
+											</div>
+											<!-- End .col-6 -->
+										</div>
+										<!-- End .row -->
+									</div>
+									<!-- End .form-choice -->
+								</div>
+								<!-- .End .tab-pane -->
+								
+								<!-- .End .tab-pane -->
+							</div>
+							<!-- End .tab-content -->
+						</div>
+						<!-- End .form-tab -->
+					</div>
+					<!-- End .form-box -->
+				</div>
+	</div>
+			<footer th:replace="layout/footer :: footer"></footer>
+
+</body>
+	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+
+	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="../../plugins/iCheck/icheck.min.js"></script>
+	<script>
+		$(function() {
+			$('input').iCheck({
+				checkboxClass : 'icheckbox_square-blue',
+				radioClass : 'iradio_square-blue',
+				increaseArea : '20%' /* optional */
+			});
+		});
+	</script>
+<script th:src="@{fe/js/jquery.min.js}"></script>
+	<script th:src="@{fe/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{fe/js/jquery.hoverIntent.min.js}"></script>
+	<script th:src="@{fe/js/jquery.waypoints.min.js}"></script>
+	<script th:src="@{fe/js/superfish.min.js}"></script>
+	<script th:src="@{fe/js/owl.carousel.min.js}"></script>
+	<script th:src="@{fe/js/bootstrap-input-spinner.js}"></script>
+	<script th:src="@{fe/js/jquery.plugin.min.js}"></script>
+	<script th:src="@{fe/js/jquery.magnific-popup.min.js}"></script>
+	<script th:src="@{fe/js/jquery.countdown.min.js}"></script>
+	<!-- Main JS File -->
+	<script th:src="@{fe/js/main.js}"></script>
+	<script th:src="@{fe/js/demos/demo-4.js}"></script>
+</html>
